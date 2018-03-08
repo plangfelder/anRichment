@@ -1,0 +1,12 @@
+Package: anRichment
+Type: Package
+Title: Collections and annotation data for use with anRichmentMethods
+Version: 0.90-1
+Depends: anRichmentMethods,TxDb.Hsapiens.UCSC.hg19.knownGene,TxDb.Mmusculus.UCSC.mm10.knownGene
+Imports: stats, utils, AnnotationDbi, GO.db, WGCNA, dynamicTreeCut, XML
+Date: 2018-03-07
+Author: Peter Langfelder
+Maintainer: Peter Langfelder <Peter.Langfelder@gmail.com>
+Description: This package contains data (collections and annotation data) to be used with anRichmentMethods.
+License: Many of the sets in the gene set collections have restrictive licenses. Please make sure you obtain the relevant license from the original author/copyright owner. KEGG (http://www.genome.jp/kegg/) requires a licence for commercial use. Reactome data are open source. BioCyc (https://biocyc.org/) requires a license, free for academic use. Pathway interaction database data are free. Lipid Maps (http://www.lipidmaps.org) are free.
+

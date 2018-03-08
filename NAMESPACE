@@ -1,0 +1,7 @@
+exportPattern("^[[:alpha:]]+")
+
+import(anRichmentMethods, AnnotationDbi, WGCNA, GO.db, XML, TxDb.Hsapiens.UCSC.hg19.knownGene, TxDb.Mmusculus.UCSC.mm10.knownGene)
+importFrom("stats", "fisher.test")
+importFrom("utils", "read.csv", "write.csv")
+importFrom("dynamicTreeCut", "printFlush", "indentSpaces")
+

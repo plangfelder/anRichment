@@ -1,0 +1,17 @@
+
+Jeremy A. Miller's and Peter Langfelder's Enrichment Functions
+
+
+                           anRichment
+
+2018/03/07: 0.90-1
+
+	. Bugfix: buldGOcollection now works with organism yeast and more
+	  generally where there are mismatches between general and
+	  organism-specific GO data.
+
+2017/10/01: 0.90
+
+	. New package with old name. This package contains mostly data, with a
+	  few functions to access them and create collections from public data
+	  such as GO and MSigDB.
