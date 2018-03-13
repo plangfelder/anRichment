@@ -15,7 +15,8 @@ HDTargetDBCollection(
         namePattern = ".convertedFrom.\%o",
         addOldOrganismToSetDescriptions = FALSE,
         descriptionPattern = " (Converted from \%o.)",
-        )
+        traceable = TRUE,
+        ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -42,8 +43,10 @@ set description?}
   \item{descriptionPattern}{Character string giving the pattern that is to be added to
 the set description. The characters "\%o" will be substituted by the actual organism name.}
 
-  \item{traceableOnly}{Logical: should only a subset of the gene sets that are traceable to a published
+  \item{traceable}{Logical: should only a subset of the gene sets that are traceable to a published
 article or website be included?}
+
+  \item{...}{Other arguments, currently ignored.}
 }
 \details{
  The gene sets in the HD literature collection are compiled from various literature sources. They represent

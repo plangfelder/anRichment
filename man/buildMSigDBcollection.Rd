@@ -28,7 +28,7 @@ MSigDBCollection(
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{file}{XML file (including path) such as the one distributed by Broad Institute.
+  \item{file}{XML file (including path) such as the one distributed by Broad Institute.}
 
   \item{MSDBVersion}{Character string containing the MSigDB version. }
 

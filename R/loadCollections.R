@@ -186,19 +186,22 @@ allCollections = function(
   {
     collections = c(collections, 
       list(GO = buildGOcollection(organism = organism),
-           MSigDB = MSigDBCollection(MSigDBxml, organism = organism, useHomology= useHomology,
+           MSigDB = if (!is.null(MSigDBxml)) 
+             MSigDBCollection(MSigDBxml, organism = organism, useHomology= useHomology,
               addOldOrganismToSetNames = addOldOrganismToSetNames,
               namePattern = namePattern,
               addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
-              descriptionPattern = descriptionPattern),
-           genomicPosition = genomicPositionCollection(organism = organism, spacings = genomicSpacings,
+              descriptionPattern = descriptionPattern) else NULL,
+           genomicPosition = if (length(genomicSpacings) > 0)
+             genomicPositionCollection(organism = organism, spacings = genomicSpacings,
                                      namePrefix = "Genomic position", 
                                      dataSource = "UCSC genome genome, via Bioconductor",
                                      overlapFactor = 2,
                                      membershipBy= "start", 
                                      useUnits = "Mb",
-                                     unit = 1e6)));
+                                     unit = 1e6) else NULL));
   }
+  collections = collections[sapply(collections, function(x) !is.null(x))];
   if (merge) do.call(merge, collections) else collections;
 }
     
