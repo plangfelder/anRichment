@@ -8,7 +8,7 @@
   Returns a collection containing NCBI Biosystems gene sets.
 }
 \usage{
-BioSystemsCollection( organism = "human")
+BioSystemsCollection( organism = "human", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,6 +17,7 @@ BioSystemsCollection( organism = "human")
 sapiens"), or scientific shorthand ("Hs"). To see all recognized organisms, use function
 \code{\link{organismLabels}}. 
 }
+  \item{...}{Ignored.}
 }
 \details{
 BioSystems data were downloaded on 2017-10-20.

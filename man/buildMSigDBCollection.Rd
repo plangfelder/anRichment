@@ -20,9 +20,9 @@ MSigDBCollection(
   organism = "human", 
   useHomology = TRUE,
   addOldOrganismToSetNames = FALSE, 
-  namePattern = ".convertedFrom.%o",
+  namePattern = ".convertedFrom.\%o",
   addOldOrganismToSetDescriptions = FALSE,
-  descriptionPattern = " (Converted from %o.)",
+  descriptionPattern = " (Converted from \%o.)",
   verbose = 1, indent = 0, 
   ...)
 }
@@ -60,7 +60,7 @@ the set description. The characters "\%o" will be substituted by the actual orga
 
   \item{verbose}{Level of verbosity. Zero means silent, higher numbers mean more verbose output.}
 
-  \item{ident}{Indentation of the diagnostic messages. Each unit adds 2 spaces.}
+  \item{indent}{Indentation of the diagnostic messages. Each unit adds 2 spaces.}
 
   \item{...}{Other arguments, currently ignored.}
 }

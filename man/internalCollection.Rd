@@ -16,7 +16,7 @@ internalCollection(
         namePattern = ".convertedFrom.\%o",
         addOldOrganismToSetDescriptions = FALSE,
         descriptionPattern = " (Converted from \%o.)",
-        trimmed = TRUE)
+        trimmed = TRUE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -44,6 +44,8 @@ set description?}
 the set description. The characters "\%o" will be substituted by the actual organism name.}
 
   \item{trimmed}{Logical: should sets that are also contained in \code{\link{HDSigDBCollection}} be removed?}
+
+  \item{...}{Ignored.}
 }
 \details{
   The gene sets in the internal collection have been originally compiled for the human genome. If another

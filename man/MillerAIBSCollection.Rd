@@ -16,7 +16,7 @@ MillerAIBSCollection(
         namePattern = ".convertedFrom.\%o",
         addOldOrganismToSetDescriptions = FALSE,
         descriptionPattern = " (Converted from \%o.)",
-        trimmed = TRUE)
+        ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -42,6 +42,8 @@ set description?}
 
   \item{descriptionPattern}{Character string giving the pattern that is to be added to
 the set description. The characters "\%o" will be substituted by the actual organism name.}
+
+  \item{...}{Ignored.}
 
 }
 \details{

@@ -2,10 +2,10 @@
 \alias{allCollections}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Load all collections available in anRichment.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This is a convenience wrapper that loads all collections available in package anRichment.
 }
 \usage{
 allCollections(
@@ -13,9 +13,9 @@ allCollections(
   organism = "human", 
   useHomology = TRUE,
   addOldOrganismToSetNames = FALSE, 
-  namePattern = ".convertedFrom.%o",
+  namePattern = ".convertedFrom.\%o",
   addOldOrganismToSetDescriptions = FALSE,
-  descriptionPattern = " (Converted from %o.)",
+  descriptionPattern = " (Converted from \%o.)",
 
   trimInternal = TRUE,
   traceableHDTargetDB = TRUE,
@@ -79,7 +79,7 @@ collection of pathways from NCBI BioSystems (\code{\link{BioSystemsCollection}})
 Additionally, the folliwng external collections are optionally built and returned as well: (1) Gene Ontology
 (GO) collection, based on annotation packages from the Bioconductor project (see
 \code{\link{buildGOcollection}}); (2) Molecular Signatures Database (MSigDB, see
-\code{\link{buildMSigDBcollection}}); and (3) genomic position collection
+\code{\link{buildMSigDBCollection}}); and (3) genomic position collection
 (\code{\link{genomicPositionCollection}}).
 
 }
@@ -93,6 +93,6 @@ Code by Peter Langfelder.
 Functions that return individual collections: \code{\link{YangLiteratureCollection}},
 \code{\link{HDSigDBCollection}}, \code{\link{HDTargetDBCollection}}, \code{\link{internalCollection}},
 \code{\link{MillerAIBSCollection}}, \code{\link{BioSystemsCollection}}, \code{\link{buildGOcollection}}, 
-\code{\link{buildMSigDBcollection}}, \code{\link{genomicPositionCollection}}.
+\code{\link{buildMSigDBCollection}}, \code{\link{genomicPositionCollection}}.
 }
 \keyword{ ~kwd2 }

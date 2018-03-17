@@ -492,12 +492,15 @@ MSigDBCollection = function(file, MSDBVersion = "5.0", organism = "human", useHo
 #
 #========================================================================================================
 
-genomicPositionCollection = function(organism, spacings,
-                                     namePrefix = "Genomic position", dataSource = "",
-                                     overlapFactor = 2,
-                                     membershipBy= c("start", "end", "overlap"),
-                                     useUnits = "Mb", 
-                                     unit = 1e6)
+genomicPositionCollection = function(
+  organism, 
+  spacings,
+  namePrefix = "Genomic position", 
+  dataSource = "",
+  overlapFactor = 2,
+  membershipBy= c("start", "end", "overlap"),
+  useUnits = "Mb", 
+  unit = 1e6)
 {
   organism = organismLabels(organism)[1]
   if (!organism %in% c("human", "mouse"))

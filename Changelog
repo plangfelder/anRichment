@@ -2,7 +2,9 @@
                            anRichment
 
 
-2018/??/??: 0.91
+2018/03/16: 0.92
+
+	. Documentation is cleaned up and hopefully usable.
 
 	. Added sets of DE genes for Htt lowering in 6m mouse striatum, Q175
 	  and WT mice, data by Nan Wang, analysis by Peter Langfelder
