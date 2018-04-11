@@ -2,6 +2,14 @@
                            anRichment
 
 
+2018/04/11: 0.93
+
+	. 4 sets that have mislabeled direction of DE dropped: 
+	  Up-regulated genes in striatum of 6 mon HD Q140 mice vs Q20 (Aaronson, GSE78274 via HDSigDB)
+	  Up-regulated genes in striatum of 10 mon HD Q140 mice vs Q20 (Aaronson, GSE78274 via HDSigDB)
+	  Down-regulated genes in striatum of 6 mon HD Q140 mice vs Q20 (Aaronson, GSE78274 via HDSigDB)
+	  Down-regulated genes in striatum of 10 mon HD Q140 mice vs Q20 (Aaronson, GSE78274 via HDSigDB)
+
 2018/03/16: 0.92
 
 	. Documentation is cleaned up and hopefully usable.
