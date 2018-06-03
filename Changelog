@@ -2,6 +2,13 @@
                            anRichment
 
 
+
+2018/06/01: 0.96
+
+	. HDSigDB was updated with new sets and sets with previously incorrect
+	  differential expression direction were corrected and re-instated (see 
+	  0.93-1 for a complete list of then-removed and now-reinstated sets).
+
 2018/05/15: 0.95
 
 	. Added circadian clock genes mentioned in a review by JS Takahashi (2017)

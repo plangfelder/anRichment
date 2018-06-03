@@ -234,9 +234,14 @@ buildGOcollection = function(
    orgExtensions = c(rep(".eg", 4), ".sgd", rep(".eg", 6));
    if (includeOffspring) 
    {
-      reverseMap = c(rep(".egGO2ALLEGS", 4), ".sgdGO2ALLORFS", rep(".egGO2ALLEGS", 6))
-   } else
-      reverseMap = c(rep(".egGO2EG", 4), ".sgdGO2ORF", rep(".egGO2EG", 6))
+      goColumn = "GOALL"
+      evidenceColumn = "EVIDENCEALL";
+   } else {
+      goColumn = "GO";
+      evidenceColumn = "EVIDENCE";
+   }
+
+   IDColumn = c(rep("ENTREZID", 4), "ORF", rep("ENTREZID", 6))[orgInd];
 
    missingPacks = NULL;
    packageName = base::paste("org.", orgShorthand, orgExtensions[orgInd], ".db", sep="");
@@ -253,22 +258,39 @@ buildGOcollection = function(
    if (verbose > 0)
      printFlush(base::paste(spaces, "GOcollection: loading annotation data..."));
 
-   orgGOlists = eval(parse(text = base::paste("AnnotationDbi::as.list(", packageName, ":::org.", orgShorthand,
-                                           reverseMap[orgInd],")", sep = "")));
-   orgGOids = names(orgGOlists);
-   nTerms = length(orgGOlists);
-   orgGoNames = names(orgGOlists);
+   orgDb = get(packageName);
+   orgGOInfo = select(orgDb, keys = keys(orgDb, keytype = IDColumn), keytype = IDColumn, 
+                      columns = c(goColumn));
 
-   goInfo = eval(parse(text = "AnnotationDbi::as.list(GO.db:::GOTERM)"));
-   if (length(goInfo) > 0)
-   {
-      dbGoIDs = as.character(sapply(goInfo, GOID));
-      dbGoOntologies = as.character(sapply(goInfo, Ontology));
-      dbGoTerm = as.character(sapply(goInfo, Term));
-      dbGoDescriptions = as.character(sapply(goInfo, Definition));
-   } else {
-      dbGoIDs = "";
-   }
+   orgGOInfo = orgGOInfo[!is.na(orgGOInfo[[goColumn]]), ];
+
+   #orgGOlists = eval(parse(text = base::paste("select(", packageName, ", columns = ",
+   #                                        reverseMap[orgInd],", keys = keys(", packageName, "))", sep = "")));
+   n = nrow(orgGOInfo);
+   index = tapply(1:n, orgGOInfo[[goColumn]], identity);
+   orgGOEntrez = lapply(index, function(i) orgGOInfo[[IDColumn]] [i]);
+   orgGOEvidence = lapply(index, function(i) orgGOInfo[[evidenceColumn]] [i]);
+   orgGOids = names(orgGOEntrez);
+   nTerms = length(orgGOids);
+
+   goKeys = keys(GO.db);
+   goInfo = select(GO.db, columns = c("GOID", "ONTOLOGY", "TERM", "DEFINITION"), keys = goKeys)
+   dbGoIDs = goInfo$GOID;
+   dbGoOntologies = goInfo$ONTOLOGY;
+   dbGoTerm =goInfo$TERM;
+   dbGoDescriptions = goInfo$DEFINITION;
+
+   ### This was old code, here for reference
+   #goInfo = eval(parse(text = "AnnotationDbi::as.list(GO.db:::GOTERM)"));
+   #if (length(goInfo) > 0)
+   #{
+   #   dbGoIDs = as.character(sapply(goInfo, GOID));
+   #   dbGoOntologies = as.character(sapply(goInfo, Ontology));
+   #   dbGoTerm = as.character(sapply(goInfo, Term));
+   #   dbGoDescriptions = as.character(sapply(goInfo, Definition));
+   #} else {
+   #   dbGoIDs = "";
+   #}
 
    GO.org2GO = match(orgGOids, dbGoIDs);
 
@@ -276,9 +298,7 @@ buildGOcollection = function(
    {
      # Drop those organism GO lists that do not map to the GO database
      keep = is.finite(GO.org2GO);
-     orgGOlists = orgGOlists[keep];
      orgGOids = orgGOids[keep];
-     orgGoNames = orgGoNames[keep];
      nTerms = sum(keep);
      GO.org2GO = match(orgGOids, dbGoIDs);
    }
@@ -313,24 +333,25 @@ buildGOcollection = function(
       term2orgTerm[is.na(term2orgTerm)] = term2orgID;
    }
 
+
+   # Note: we have to drop those termNames that have no match in GO databases since it does not make sense to
+   # include empty sets in the collection.
+
    keepInputTerms = is.finite(term2orgTerm);
-   nInputTerms = length(termNames);
+   termNames = termNames[keepInputTerms];
+   nInputTerms = sum(keepInputTerms);
+
+   term2orgTerm = term2orgTerm[keepInputTerms];
 
    dataSets = vector(mode="list", length = nInputTerms);
-   for (t in 1:nInputTerms) dataSets[[t]] = list( data = NA)
    names(dataSets) = termNames;
 
-   termIDs = termNames.GO = termOntologies = termDescriptions = rep(NA, nInputTerms);
-   termIDs[keepInputTerms] = orgIDs[term2orgTerm[keepInputTerms]];
-   termNames.GO[keepInputTerms] = orgTerms[term2orgTerm[keepInputTerms]];
-   termOntologies[keepInputTerms] = orgOntologies[term2orgTerm[keepInputTerms]];
-   termDescriptions[keepInputTerms] = orgDescriptions[term2orgTerm[keepInputTerms]];
+   termIDs = orgIDs[term2orgTerm];
+   termNames.GO = orgTerms[term2orgTerm];
+   termOntologies = orgOntologies[term2orgTerm];
+   termDescriptions = orgDescriptions[term2orgTerm];
 
-   collectGarbage();
-   nExpandLength = 0;
-   blockSize = 1000; # For a more efficient concatenating of offspring genes
-
-   knownEvidence = knownEvidenceCodes();
+   knownEvidence = knownEvidenceCodes()$evidenceCode;
 
    if (verbose > 0)
    {
@@ -339,21 +360,20 @@ buildGOcollection = function(
    }
 
    step = floor(nInputTerms/100);
-   for (t in 1:nInputTerms) if (keepInputTerms[t] && !is.na(orgGOlists[[ term2orgTerm[t] ]] [[1]]))
+   for (t in 1:nInputTerms) 
    {
       c = term2orgTerm[t];
-      te = as.character(names(orgGOlists[[c]])); # Term evidence codes
-      unknownEvidence = is.na(match(te, knownEvidenceCodes()$evidenceCode));
+      te = as.character(orgGOEvidence[[c]]); # Term evidence codes
+      unknownEvidence = is.na(match(te, knownEvidence));
       if (any(unknownEvidence))
       {
         printFlush(WGCNA::spaste("Have the following unknown evidence codes: \n   ",
                    base::paste(unique(te[unknownEvidence]), collapse = ", ")))
         te[unknownEvidence] = "other";
       }
-      tc = orgGOlists[[c]]; # Gene codes
-      dataSets[[t]] = newGeneSet(geneEntrez = .conditionalNumeric(tc), 
+      tc = 
+      dataSets[[t]] = newGeneSet(geneEntrez = .conditionalNumeric(orgGOEntrez[[c]]),
                        geneEvidence = as.factor(te),
-                                  #knownEvidence$numericCode[match(te, knownEvidence$evidenceCode)],
                        geneSource = "GO",
                        ID = termIDs[t],
                        name = termNames.GO[t],
