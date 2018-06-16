@@ -3,6 +3,18 @@
 
 
 
+2018/06/15: 0.97
+
+	. Tagging of HDSigDB sets was improved for gene and protein sets
+	  affected by CAG length expansion in Htt gene. These sets are now
+	  tagged by "Effect of Htt CAG length expansion"; there are separate
+	  groups for genes whose mRNA and proteins are DE in mHtt CAG length
+	  expansion vs. controls: "Differential mRNA/protein expression induced
+	  by Htt CAG length expansion" for mRNA and protein studies,
+	  respectively. Several sets that previously (erroneously) did not
+	  belong to "Effect of Htt CAG length expansion" are now tagged with
+	  this group.
+
 2018/06/01: 0.96
 
 	. HDSigDB was updated with new sets and sets with previously incorrect
