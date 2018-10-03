@@ -7,7 +7,7 @@
 
 getIllumina450kAnnotation = function(addEntrez = TRUE)
 {
-  env = new.env;
+  env = new.env();
   x = load(system.file("extdata", "Illumina450kManifest.rda", package = "anRichment"),
            envir = env);
   if (x!="Illumina450kManifest.short") 
@@ -15,7 +15,7 @@ getIllumina450kAnnotation = function(addEntrez = TRUE)
 
   out = get(x, envir = env);      
 
-  entrez = entrezFromMultipleSymbols(out$UCSCRefGeneName);
+  entrez = entrezFromMultipleSymbols(out$UCSC_RefGene_Name);
   cbind(out, Entrez = entrez);
 }
 

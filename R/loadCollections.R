@@ -202,7 +202,7 @@ allCollections = function(
                                      unit = 1e6) else NULL));
   }
   collections = collections[sapply(collections, function(x) !is.null(x))];
-  if (merge) do.call(merge, collections) else collections;
+  if (merge) do.call(mergeCollections, collections) else collections;
 }
     
 #=======================================================================================================
