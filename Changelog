@@ -1,6 +1,12 @@
 
                            anRichment
 
+2018/12/18: 0.98
+
+	. New gene sets from Hammond et al, "Single-Cell RNA Sequencing of
+	  Microglia throughout the Mouse Lifespan and in the Injured Brain
+	  Reveals Complex Cell-State Changes", Immunity 50, 1–19 January 15,
+	  2019
 
 	. Bugfix in getIllumina450kAnnotation fixes crash in the function
 
