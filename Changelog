@@ -1,6 +1,26 @@
 
                            anRichment
 
+2019/03/17: 1.00
+
+	. New sets from Haure-Mirande JV, Wang M, Audrain M, Fanutza T, Kim
+	  SH, Heja S, Readhead B, Dudley JT, Blitzer RD, Schadt E, Zhang B,
+	  Gandy S, Ehrlich ME. Integrative approach to sporadic Alzheimer's
+	  disease: deficiency of TYROBP in cerebral Aβ amyloidosis mouse
+	  normalizes clinical phenotype and complement subnetwork molecular
+	  pathology without reducing Aβ burden. Mol Psychiatry. 2019 Mar;
+	  24(3):431-446. doi: 10.1038/s41380-018-0255-6. Epub 2018 Oct 3.
+	  
+2019/02.17: 0.99
+
+	. Function MSigDBCollection now accepts argument excludeCategories for
+	  excluding certain sections of MSigDB (e.g., GO collection which is
+	  typically retrieved using buildGOcollection); the default is to
+	  exclude GO, positional sets and curated gene sets.
+
+	. The default for excludeCategories in buildMSigDB collection now includes
+	  C1 (positional sets), C2 (curated sets) and C5 (GO).
+
 2018/12/18: 0.98
 
 	. New gene sets from Hammond et al, "Single-Cell RNA Sequencing of

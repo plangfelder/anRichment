@@ -416,7 +416,7 @@ buildGOcollection = function(
 # Convert the molecular signature database MSigDB, in its XML or simple text form, to an anRichment
 # collection. Will also try to add the opposite 
 
-buildMSigDBCollection = function(file, MSDBVersion = "5.0", excludeCategories = c("C2", "C5"))
+buildMSigDBCollection = function(file, MSDBVersion = "5.0", excludeCategories = c("C1", "C2", "C5"))
 {
    t = xmlTreeParse(file);
    msdb1 = t$doc$children$MSIGDB
@@ -486,7 +486,9 @@ buildMSigDBCollection = function(file, MSDBVersion = "5.0", excludeCategories = 
    MSigDBCollection;
 }
 
-MSigDBCollection = function(file, MSDBVersion = "5.0", organism = "human", useHomology = TRUE,
+MSigDBCollection = function(file, MSDBVersion = "5.0", 
+                      excludeCategories = c("C1", "C2", "C5"),
+                      organism = "human", useHomology = TRUE,
                       addOldOrganismToSetNames = FALSE, namePattern = ".convertedFrom.%o",
                       addOldOrganismToSetDescriptions = FALSE,
                       descriptionPattern = " (Converted from %o.)",
@@ -494,7 +496,7 @@ MSigDBCollection = function(file, MSDBVersion = "5.0", organism = "human", useHo
 {
   spaces = indentSpaces(indent);
   if (verbose > 0) printFlush(spaste(spaces, "Building MSigDB collection from XML file.."));
-  collection = buildMSigDBCollection(file = file, MSDBVersion = MSDBVersion);
+  collection = buildMSigDBCollection(file = file, MSDBVersion = MSDBVersion, excludeCategories = excludeCategories);
   if (length(organism)==0) return(collection);
   if (is.na(organism)) return(collection);
 

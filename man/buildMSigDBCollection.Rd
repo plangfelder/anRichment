@@ -12,11 +12,12 @@
 buildMSigDBCollection(
   file, 
   MSDBVersion = "5.0", 
-  excludeCategories = c("C2", "C5"))
+  excludeCategories = c("C1", "C2", "C5"))
 
 MSigDBCollection(
   file, 
   MSDBVersion = "5.0", 
+  excludeCategories = c("C1", "C2", "C5"),
   organism = "human", 
   useHomology = TRUE,
   addOldOrganismToSetNames = FALSE, 
@@ -33,7 +34,7 @@ MSigDBCollection(
   \item{MSDBVersion}{Character string containing the MSigDB version. }
 
   \item{excludeCategories}{Character vector containing the MSigDB category labels to be excluded. The default
-corresponds to "curated gene sets  from online pathway databases, publications in PubMed, and knowledge of
+corresponds to positional sets (C1), "curated gene sets  from online pathway databases, publications in PubMed, and knowledge of
 domain experts" (C2) and GO (C5). }
   \item{organism}{
    Character string specifying the organism. Can be common name (such as "human"), scientific name ("Homo
