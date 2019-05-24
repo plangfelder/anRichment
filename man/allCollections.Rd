@@ -73,8 +73,9 @@ The function loads and returns all internally stored collections: (1) the "Yang 
 (3) HD Target DB (\code{\link{HDTargetDBCollection}}), (4) "internal" collection largely inherited from older
 versions and originally compiled by Jeremy Miller for the \code{userListEnrichment} function in WGCNA
 (\code{\link{internalCollection}}), (5)
-collection of gene sets collected by Jeremy Miller at AIBS (\code{\link{MillerAIBSCollection}}), and (6)
-collection of pathways from NCBI BioSystems (\code{\link{BioSystemsCollection}}).
+collection of gene sets collected by Jeremy Miller at AIBS (\code{\link{MillerAIBSCollection}}), (6)
+collection of pathways from NCBI BioSystems (\code{\link{BioSystemsCollection}}) and (7) Phenopedia collection
+(\code{\link{PhenopediaCollection}}).
 
 Additionally, the folliwng external collections are optionally built and returned as well: (1) Gene Ontology
 (GO) collection, based on annotation packages from the Bioconductor project (see
@@ -92,7 +93,8 @@ Code by Peter Langfelder.
 \seealso{
 Functions that return individual collections: \code{\link{YangLiteratureCollection}},
 \code{\link{HDSigDBCollection}}, \code{\link{HDTargetDBCollection}}, \code{\link{internalCollection}},
-\code{\link{MillerAIBSCollection}}, \code{\link{BioSystemsCollection}}, \code{\link{buildGOcollection}}, 
+\code{\link{MillerAIBSCollection}}, \code{\link{BioSystemsCollection}}, 
+\code{\link{PhenopediaCollection}}, \code{\link{buildGOcollection}}, 
 \code{\link{buildMSigDBCollection}}, \code{\link{genomicPositionCollection}}.
 }
-\keyword{ ~kwd2 }
+\keyword{misc}

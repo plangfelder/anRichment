@@ -1,6 +1,15 @@
 
                            anRichment
 
+2019/05/22: 1.00-91
+
+	. Remove non-published data sets from Myriam Heiman
+
+2019/05/22: 1.00-90
+
+	. The CDC Phenopedia database is now available as a collection via
+	  function PhenopediaCollection.
+
 2019/03/17: 1.00
 
 	. New sets from Haure-Mirande JV, Wang M, Audrain M, Fanutza T, Kim

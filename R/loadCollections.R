@@ -135,6 +135,21 @@ HDTargetDBCollection = function(organism = "human", useHomology = TRUE,
         descriptionPattern = descriptionPattern);
 }
 
+PhenopediaCollection = function(organism = "human", useHomology = TRUE,
+                      addOldOrganismToSetNames = FALSE, namePattern = ".convertedFrom.%o",
+                      addOldOrganismToSetDescriptions = FALSE,
+                      descriptionPattern = " (Converted from %o.)",
+                      ...)
+{
+  .loadCollection(file = "extdata/PhenopediaCollection.rda",
+        organism = organism, useHomology = useHomology,
+        addOldOrganismToSetNames = addOldOrganismToSetNames,
+        namePattern = namePattern,
+        addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
+        descriptionPattern = descriptionPattern);
+}
+
+
 allCollections = function(
   merge = FALSE,
   organism = "human", useHomology = TRUE,
@@ -180,7 +195,12 @@ allCollections = function(
         addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
         descriptionPattern = descriptionPattern,
         trim = trimInternal),
-    BioSystems = BioSystemsCollection(organism = organism));
+    BioSystems = BioSystemsCollection(organism = organism),
+    Phenopedia = PhenopediaCollection(organism = organism, useHomology= useHomology,
+        addOldOrganismToSetNames = addOldOrganismToSetNames,
+        namePattern = namePattern,
+        addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
+        descriptionPattern = descriptionPattern));
 
   if (buildExternal)
   {
