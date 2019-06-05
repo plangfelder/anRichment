@@ -1,6 +1,17 @@
 
                            anRichment
 
+
+2019/06/05: 1.01-1
+
+	. Duplicates in Phenopedia collection removed.
+
+2019/05/27: 1.01
+
+	. New gene marker sets for major brain cell types (neurons,
+	  astrocytes, oligodendrocytes and microglia) in various brain regions
+	  from Kelley et al, Nature Neuroscience 2018. 
+
 2019/05/22: 1.00-91
 
 	. Remove non-published data sets from Myriam Heiman
