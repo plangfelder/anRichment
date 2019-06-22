@@ -537,6 +537,13 @@ MSigDBCollection = function(file, MSDBVersion = "5.0",
 genomicPositionCollection = function(
   organism, 
   spacings,
+  # optional genome annotation table.
+  genomeAnnotation = NULL,
+  entrezColumn = NULL,
+  chromosomeColumn = NULL,
+  startBpColumn = NULL,
+  endBpColumn = NULL,
+  # Output options
   namePrefix = "Genomic position", 
   dataSource = "",
   overlapFactor = 2,
@@ -545,20 +552,43 @@ genomicPositionCollection = function(
   unit = 1e6)
 {
   organism = organismLabels(organism)[1]
-  if (!organism %in% c("human", "mouse"))
-    stop("The position collection is only available for human and mouse.");
-
-  txNames = switch(organism, human = "TxDb.Hsapiens.UCSC.hg19.knownGene",
-                             mouse = "TxDb.Mmusculus.UCSC.mm10.knownGene");
-
-  txdb.lst = as.list(get(txNames));
-
-  geneTxIds = txdb.lst$genes$tx_id;
-  geneData = txdb.lst$transcripts[ match(geneTxIds, txdb.lst$transcripts$tx_id), ];
-
-  chrLevels = sort(unique(as.character(geneData$tx_chrom)));
-
   membershipBy = match.arg(membershipBy);
+  if (!is.null(genomeAnnotation))
+  {
+    .checkCol = function(name, value, data)
+    {
+      if (length(value)!=1) stop("Length of ", name, " must be 1.");
+      if (is.numeric(value))
+      {
+        if (value <1 || value > ncol(data)) 
+           stop(name, " = ", value, " is not between 1 and 'ncol(data)' = ", ncol(data), ".");
+      } else {
+        if (!value %in% names(data))
+          stop(formatLabels(spaste(
+            name, " = ", value, " is not among the names of 'data' which are: ", paste(names(data), collapse = ", ")),
+            maxCharPerLine = 100));
+      }
+    }
+    .checkCol("entrezColumn", entrezColumn, genomeAnnotation);
+    .checkCol("chromosomeColumn", chromosomeColumn, genomeAnnotation);
+    .checkCol("startBpColumn", startBpColumn, genomeAnnotation);
+    .checkCol("endBpColumn", endBpColumn, genomeAnnotation);
+  } else {
+    if (!organism %in% c("human", "mouse"))
+      stop("The position collection is only available for human and mouse.");
+    txNames = switch(organism, human = "TxDb.Hsapiens.UCSC.hg19.knownGene",
+                               mouse = "TxDb.Mmusculus.UCSC.mm10.knownGene");
+    txdb.lst = as.list(get(txNames));
+    geneTxIds = txdb.lst$genes$tx_id;
+    genomeAnnotation = data.frame(txdb.lst$transcripts[ match(geneTxIds, txdb.lst$transcripts$tx_id), ],
+                     gene_id = txdb.lst$genes$gene_id);
+    chromosomeColumn = "tx_chrom";
+    endBpColumn = "tx_end";
+    startBpColumn = "tx_start";
+    entrezColumn = "gene_id";
+  }
+
+  chrLevels = sort(unique(as.character(genomeAnnotation[[chromosomeColumn]])));
   
   # process each chromosome separately
   dataSets = list();
@@ -574,9 +604,9 @@ genomicPositionCollection = function(
                       description = spaste(namePrefix, ": Genes on ", chr),
                       source = dataSource);
 
-    keep = which(geneData$tx_chrom==chr);
-    geneData1 = geneData[keep, ];
-    maxPos = max(geneData1$tx_end);
+    keep = which(genomeAnnotation[[chromosomeColumn]]==chr);
+    genomeAnnotation1 = genomeAnnotation[keep, ];
+    maxPos = max(genomeAnnotation1[[endBpColumn]]);
     for (sp in spacings)
     {
       nSets = ceiling(overlapFactor * maxPos/sp);
@@ -586,11 +616,11 @@ genomicPositionCollection = function(
         start1 = (i-1) * sp/overlapFactor+1;
         end1 = start1 + sp;
         if (membershipBy=="start") {
-           keep.int = which(geneData1$tx_start >= start1 & geneData1$tx_start < end1);
+           keep.int = which(genomeAnnotation1[[startBpColumn]] >= start1 & genomeAnnotation1[[startBpColumn]] < end1);
         } else if (membershipBy=="end") {
-           keep.int = which(geneData1$tx_end >= start1 & geneData1$tx_end < end1);
+           keep.int = which(genomeAnnotation1[[endBpColumn]] >= start1 & genomeAnnotation1[[endBpColumn]] < end1);
         } else
-           keep.int = which(geneData1$tx_end >= start1 & geneData1$tx_start < end1)
+           keep.int = which(genomeAnnotation1[[endBpColumn]] >= start1 & genomeAnnotation1[[startBpColumn]] < end1)
   
         if (length(useUnits) > 0 && is.character(useUnits))
         {
@@ -608,7 +638,7 @@ genomicPositionCollection = function(
         }
         if (length(keep.int)>0)
         {
-           newGeneSet(geneEntrez = txdb.lst$genes$gene_id[keep[keep.int]],
+           newGeneSet(geneEntrez = genomeAnnotation[[entrezColumn]] [keep[keep.int]],
                       geneEvidence = "other", geneSource = dataSource,
                       ID = spaste(namePrefix, ".", chr, ".", i),
                       name = setName,
