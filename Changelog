@@ -1,6 +1,30 @@
 
                            anRichment
 
+2019/09/27: 1.04
+
+	. 3 new gene sets of HD modifier genes from GeM-HD GWAS update of
+	  2019.
+
+	. For compatibility with old code, HDSigDB is now also accessible
+	  using function HuntingtonsDiseaseGeneExpressionCollection.
+
+2019/08/25: 1.03
+
+	. New circadian gene sets from Zhang, ... Hogenesh, A circadian gene
+	  expression atlas in mammals: implications for biology and medicine. 
+	  Proc Natl Acad Sci U S A. 2014 Nov 11;111(45):16219-24. doi:
+	  10.1073/pnas.1408886111.; Sato, ..., Sassone-Corsi, Circadian
+	  Reprogramming in the Liver IdentifiesMetabolic Pathways of Aging.
+	  Cell170, 664–677 (2017); and Seney, ..., McClung, Diurnal rhythms in
+	  gene expression in the prefrontal cortex in schizophrenia.  Nature
+	  Communications volume 10, Article number: 3355 (2019). All circadian
+	  sets are tagged by "Circadian oscillations".
+
+	. Tagging (groups) of certain sets in the literature collection is now
+	  more complete.
+
+
 2019/06/21: 1.02
 
 	. Function genomicPositionCollection can now build the collection from

@@ -12,6 +12,11 @@ genome, i.e., each gene set contains genes within a window around a specific pos
 genomicPositionCollection(
   organism, 
   spacings,
+  genomeAnnotation = NULL,
+  entrezColumn = NULL,
+  chromosomeColumn = NULL,
+  startBpColumn = NULL,
+  endBpColumn = NULL,
   namePrefix = "Genomic position", 
   dataSource = "",
   overlapFactor = 2,
@@ -26,6 +31,21 @@ Organism for which the collection should be creataed. At present only human and 
 }
   \item{spacings}{A numeric vector giving the window sizes.
 }
+  \item{genomeAnnotation}{Optional data frame containing genome annotation. If given, the collection will be built from
+the data supplied in this data frame. The data frame must contain, for each gene,
+Entrez identifier, chromosome, base pair location of the start and base pair location of the end. The order of the columns
+can be arbitrary; other columns may be included and will be ignored.}
+
+  \item{entrezColumn}{Name of the column in \code{genomeAnnotation} that contains the Entrez identiers. }
+
+  \item{chromosomeColumn}{Name of the column in \code{genomeAnnotation} that contains the chromosome or scaffold name. }
+
+  \item{startBpColumn}{Name of the column in \code{genomeAnnotation} that contains the starting
+basepair position of the gene. }
+
+  \item{endBpColumn}{Name of the column in \code{genomeAnnotation} that contains the ending
+basepair position of the gene. }
+
   \item{namePrefix}{Character string giving the prefix for gene set IDs.  
 }
   \item{dataSource}{Character string giving the source of gene sets.

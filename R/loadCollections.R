@@ -88,6 +88,20 @@ HDSigDBCollection = function(organism = "human", useHomology = TRUE,
 }
 
 
+HuntingtonsDiseaseGeneExpressionCollection = function(organism = "human", useHomology = TRUE,
+                      addOldOrganismToSetNames = FALSE, namePattern = ".convertedFrom.%o",
+                      addOldOrganismToSetDescriptions = FALSE,
+                      descriptionPattern = " (Converted from %o.)")
+{
+  HDSigDBCollection(organism = organism, useHomology = useHomology, 
+          addOldOrganismToSetNames = addOldOrganismToSetNames,
+          namePattern = namePattern,
+          addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
+          descriptionPattern =  descriptionPattern)
+}
+
+
+
 BioSystemsCollection = function(organism = "human", ...)
 {
   org.ext = organismLabels(organism)[2];
