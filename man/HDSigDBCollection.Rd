@@ -1,5 +1,6 @@
 \name{HDSigDBCollection}
 \alias{HDSigDBCollection}
+\alias{HDSigDBCollection}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
   Returns a collection of expression pattern gene sets curated from public data related to Huntington's

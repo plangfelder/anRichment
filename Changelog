@@ -1,6 +1,23 @@
 
                            anRichment
 
+
+2019/12/14: 1.06-1
+
+	. Fixed problem with duplicated IDs in Kraseman and Trem2 KO (Wang)
+	  microglia gene sets; all sets now have unique identifiers.
+
+2019/12/12: 1.06
+
+	. New striatum cell type marker gene sets from Saunders, ...,
+	  McCarroll Cell 2018 single cell RNA-seq article
+
+2019/11/29: 1.05
+
+	. New gene sets: astrocyte markers from Chai, ..., Khakh Neuron 2017,
+	  D1 and D2-MSN markers from Kronman, ..., Nestler Sci. Rep. 2019, and
+	  microglial aging genes from Tabula Muris Senis (Quake) Biorxiv 2019
+
 2019/09/27: 1.04
 
 	. 3 new gene sets of HD modifier genes from GeM-HD GWAS update of
