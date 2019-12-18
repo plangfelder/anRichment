@@ -1,7 +1,12 @@
 
                            anRichment
 
+2019/12/17: 1.07
 
+	. New gene set that contains loci identified in psychiatric GWAS 
+	  studies.
+
+	. 
 2019/12/14: 1.06-1
 
 	. Fixed problem with duplicated IDs in Kraseman and Trem2 KO (Wang)
