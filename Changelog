@@ -1,6 +1,24 @@
 
                            anRichment
 
+
+2020/02/20: 1.09
+
+	. Gokce and Saunders single cell seq data sets have been modified
+	  again. Older sets were removed entirely and new sets re-created with
+	  modified thresholds.
+
+2020/02/20: 1.08
+
+	. Gokce and Saunders single cell seq data sets have been modified by
+	  imposing additional restrictions on fold change vs. maximum of all
+	  other clusters, mean expression and minimum correlation.
+
+	. There are 4 nauronal activity new gene sets from Zhang et al (2007)
+	  that are subsets of the existing set "Neuronal survival and death"
+	  and give genes up- and down-regulated in AP bursting and in bath
+	  glutamate. 
+
 2019/12/17: 1.07
 
 	. New gene set that contains loci identified in psychiatric GWAS 
