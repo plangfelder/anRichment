@@ -2,6 +2,22 @@
                            anRichment
 
 
+2020/05/13: 1.12
+
+	. Frontal cortex gene sets from Saunders et al were trimmed to no more
+	  than 200 genes.
+	. Minor fixes in code and help files
+
+2020/05/05: 1.11
+
+	. Added hippocampus and cerebellum single cell RNA-seq gene sets
+	  from Saunders et al.
+	. Striatum, frontal and posterior cortex data sets from Saunders etal
+	  have been reworked with minimal changes
+	. Yang literature collection was re-compiled with org.Xx.eg.db
+	  database version 3.10; this may lead to slightly different symbol to
+	  Entrez conversions
+
 2020/04/07: 1.10
 
 	. Added frontal and posterior cortex single cell RNA-seq gene sets

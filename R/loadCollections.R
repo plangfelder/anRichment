@@ -97,7 +97,7 @@ HuntingtonsDiseaseGeneExpressionCollection = function(organism = "human", useHom
           addOldOrganismToSetNames = addOldOrganismToSetNames,
           namePattern = namePattern,
           addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
-          descriptionPattern =  descriptionPattern)
+          descriptionPattern = descriptionPattern)
 }
 
 
