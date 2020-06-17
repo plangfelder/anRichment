@@ -1,6 +1,12 @@
 
                            anRichment
 
+
+2020/06/16: 1.13-1
+
+	. Fixed bug in buildGOCollection that crashed the function for certain
+	  organisms.
+
 2020/06/16: 1.13
 
 	. Microglia single cell RNA-seq gene sets from Keren-Shaul et al

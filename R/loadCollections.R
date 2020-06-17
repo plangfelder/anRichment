@@ -265,7 +265,7 @@ buildGOcollection = function(
    
    spaces = indentSpaces(indent);
 
-   orgExtensions = c(rep(".eg", 4), ".sgd", rep(".eg", 6));
+   orgExtensions = c(rep(".eg", 4), ".sgd", rep(".eg", nrow(knownOrganisms)-5));
    if (includeOffspring) 
    {
       goColumn = "GOALL"
@@ -275,7 +275,7 @@ buildGOcollection = function(
       evidenceColumn = "EVIDENCE";
    }
 
-   IDColumn = c(rep("ENTREZID", 4), "ORF", rep("ENTREZID", 6))[orgInd];
+   IDColumn = c(rep("ENTREZID", 4), "ORF", rep("ENTREZID", nrow(knownOrganisms)-5))[orgInd];
 
    missingPacks = NULL;
    packageName = base::paste("org.", orgShorthand, orgExtensions[orgInd], ".db", sep="");
