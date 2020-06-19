@@ -2,6 +2,13 @@
                            anRichment
 
 
+2020/06/18: 1.14
+
+	. Hammond et al (2018) microglia gene sets have been corrected by
+	  removing genes underexpressed in each cluster and restricting the
+	  number of markers to between 20 and 200. Some clusters that do not
+	  have at least 20 markers have been removed. 
+
 2020/06/16: 1.13-1
 
 	. Fixed bug in buildGOCollection that crashed the function for certain
