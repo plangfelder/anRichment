@@ -2,6 +2,12 @@
                            anRichment
 
 
+2020/06/24: 1.16
+
+	. Illumina 450k annotation data and the accessor function
+	  getIllumina450kAnnotation have been removed to make the package
+	  smaller as well as to avoid potential licensing conflicts.
+
 2020/06/24: 1.15
 
 	. New sets from the NHGRI-EBI GWAS catalog and from Hor et al (2019)
