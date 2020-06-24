@@ -2,6 +2,12 @@
                            anRichment
 
 
+2020/06/24: 1.15
+
+	. New sets from the NHGRI-EBI GWAS catalog and from Hor et al (2019)
+	  study of the interlpay of sleep, sleep deprivation and circadian
+	  expression cycling.
+
 2020/06/18: 1.14
 
 	. Hammond et al (2018) microglia gene sets have been corrected by
