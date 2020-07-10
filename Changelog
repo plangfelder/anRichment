@@ -2,6 +2,11 @@
                            anRichment
 
 
+2020/07/10: 1.16-1
+
+	. Changed the name of Huntington's disease group to only use standard
+	  ASCII characters to prevent problems with character encoding
+
 2020/06/24: 1.16
 
 	. Illumina 450k annotation data and the accessor function
