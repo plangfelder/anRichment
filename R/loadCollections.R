@@ -125,14 +125,21 @@ MillerAIBSCollection = function(organism = "human", useHomology = TRUE,
 YangLiteratureCollection = function(organism = "human", useHomology = TRUE,
                       addOldOrganismToSetNames = FALSE, namePattern = ".convertedFrom.%o",
                       addOldOrganismToSetDescriptions = FALSE,
+                      trimSynGO = TRUE,
                       descriptionPattern = " (Converted from %o.)", ...)
 {
-  .loadCollection(file = "extdata/extendedCustomCollection.rda",
+  coll = .loadCollection(file = "extdata/extendedCustomCollection.rda",
         organism = organism, useHomology = useHomology,
         addOldOrganismToSetNames = addOldOrganismToSetNames,
         namePattern = namePattern,
         addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
         descriptionPattern = descriptionPattern);
+  if (trimSynGO)
+  {
+    coll = subsetCollection(coll, tags = "synGO.SYNGO:", exactMatch = FALSE, fixed = TRUE, invertSearch = TRUE,
+                ignore.case = FALSE);
+  }
+  coll;
 }
 
 HDTargetDBCollection = function(organism = "human", useHomology = TRUE,

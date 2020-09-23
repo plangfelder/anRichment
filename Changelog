@@ -2,6 +2,32 @@
                            anRichment
 
 
+2020/09/23: 1.19-1
+
+	. A superfluous ATM set (p53 pathway which is also present in KEGG)
+	  was removed. This also fixes a problem with duplicated ATM data set
+	  IDs.
+
+2020/09/20: 1.19
+
+	. New sets of immune cell markers from human single cell RNA seq of
+	  Villani et al (2017).
+	. New sets of genes up- and down-regulated by sleep
+	  deprivation in mouse brain (Maret et al, PNAS 2007).
+
+2020/08/20: 1.18
+
+	. New sets of genes DE for mHtt expansion in TRAP-purified cell lines
+	  and single nucleus RNA-seq in mouse models and human patients from
+	  Lee et al (Neuron. 2020 Jul 15;S0896-6273(20)30475-X).
+
+2020/07/12: 1.17
+
+	. New sets from synGO (https://syngoportal.org/) added to Yang
+	  literature collection. Since some of these duplicate (or nearly
+	  duplicate, depending on version) GO terms, by default the GO terms
+	  are dropped from Yang literature collection.
+
 2020/07/10: 1.16-1
 
 	. Changed the name of Huntington's disease group to only use standard
