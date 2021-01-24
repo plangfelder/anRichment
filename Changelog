@@ -2,6 +2,13 @@
                            anRichment
 
 
+2021/01/24: 1.19-2
+
+	. Set names from sorted cell and single nucleus RNA seq data from
+	  Lee et al (Neuron. 2020 Jul 15;S0896-6273(20)30475-X) were corrected
+	  for mistakes and short set names were shortened. Gene content of the gene
+	  sets was not changed.
+
 2020/09/23: 1.19-1
 
 	. A superfluous ATM set (p53 pathway which is also present in KEGG)
