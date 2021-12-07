@@ -16,6 +16,7 @@ YangLiteratureCollection(
         addOldOrganismToSetNames = FALSE,
         namePattern = ".convertedFrom.\%o",
         addOldOrganismToSetDescriptions = FALSE,
+        trimSynGO = TRUE,
         descriptionPattern = " (Converted from \%o.)",
         ...)
 }
@@ -40,6 +41,9 @@ the set name. The characters "\%o" will be substituted by the actual organism na
 
   \item{addOldOrganismToSetDescriptions}{Logical: should an  indication of the old organism be appended to the
 set description?}
+
+  \item{trimSynGO}{Logical: should the SynGO (synaptic GO sets) be trimmed by removing all terms that are also present in
+GO?}
 
   \item{descriptionPattern}{Character string giving the pattern that is to be added to
 the set description. The characters "\%o" will be substituted by the actual organism name.}

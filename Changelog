@@ -2,6 +2,28 @@
                            anRichment
 
 
+2021/12/07: 1.21
+
+	. New sets of microglia state markers from a review by Chen and
+	  Colonna, 2021 (doi: 10.1084/jem.20202717).
+
+2021/08/11: 1.20-1
+
+	. Fixed naming of gene sets from Lee et al (Neuron. 2020 Jul
+	  15;S0896-6273(20)30475-X): some Q175 single nucleus RNA-seq sets
+	  were labeled as R6/2. The offending sets were labeled as R6/2 vs. WT
+	  at 6 months.
+
+2021/03/30: 1.20
+
+	. 4 new gene sets from Safaiyan, ..., Simons, White matter aging drives 
+	  microglial diversity, Neuron 2021
+
+2021/02/08: 1.19-3
+
+	. Fixed help file for YangLiteratureCollection to include the trimGO
+	  argument.
+
 2021/01/24: 1.19-2
 
 	. Set names from sorted cell and single nucleus RNA seq data from
