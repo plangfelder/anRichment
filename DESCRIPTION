@@ -1,10 +1,10 @@
 Package: anRichment
 Type: Package
 Title: Collections and annotation data for use with anRichmentMethods
-Version: 1.22
+Version: 1.23
 Depends: anRichmentMethods,TxDb.Hsapiens.UCSC.hg19.knownGene,TxDb.Mmusculus.UCSC.mm10.knownGene
 Imports: stats, utils, AnnotationDbi, GO.db, WGCNA, dynamicTreeCut, XML
-Date: 2022-01-28
+Date: 2022-12-02
 Author: Peter Langfelder
 Maintainer: Peter Langfelder <Peter.Langfelder@gmail.com>
 Description: This package contains data (collections and annotation data) to be used with anRichmentMethods.
