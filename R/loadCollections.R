@@ -457,7 +457,8 @@ buildGOcollection = function(
 # Convert the molecular signature database MSigDB, in its XML or simple text form, to an anRichment
 # collection. Will also try to add the opposite 
 
-buildMSigDBCollection = function(file, MSDBVersion = "5.0", excludeCategories = c("C1", "C2", "C5"))
+buildMSigDBCollection = function(file, MSDBVersion = "2023.1", excludeCategories = c("C1", "C2", "C5",
+         "M1", "M2", "M5"))
 {
    t = xmlTreeParse(file);
    msdb1 = t$doc$children$MSIGDB
@@ -466,11 +467,18 @@ buildMSigDBCollection = function(file, MSDBVersion = "5.0", excludeCategories = 
      c("H", "Hallmark gene sets",
        "C1", "positional gene sets",
        "C2", "curated gene sets",
-       "C3", "motif gene sets",
+       "C3", "regulatory target gene sets",
        "C4", "computational gene sets",
-       "C5", "GO gene sets",
+       "C5", "ontology gene sets",
        "C6", "oncogenic signatures",
-       "C7", "immunologic signatures"),
+       "C7", "immunologic signatures",
+       "C8", "cell type signatures",
+       "MH", "mouse-ortholog hallmark gene sets",
+       "M1", "positional gene sets",
+       "M2", "curated gene sets",
+       "M3", "regulatory target motif gene sets",
+       "M5", "ontology gene sets",
+       "M8", "cell type signatures"),
       ncol = 2, byrow = TRUE);
    MSigGroups = character(0);
    if (FALSE)
@@ -527,8 +535,9 @@ buildMSigDBCollection = function(file, MSDBVersion = "5.0", excludeCategories = 
    MSigDBCollection;
 }
 
-MSigDBCollection = function(file, MSDBVersion = "5.0", 
-                      excludeCategories = c("C1", "C2", "C5"),
+MSigDBCollection = function(file, 
+                      MSDBVersion = "2023.1", 
+                      excludeCategories = c("C1", "C2", "C5", "M1", "M2", "M5"),
                       organism = "human", useHomology = TRUE,
                       addOldOrganismToSetNames = FALSE, namePattern = ".convertedFrom.%o",
                       addOldOrganismToSetDescriptions = FALSE,

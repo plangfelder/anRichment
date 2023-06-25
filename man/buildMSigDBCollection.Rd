@@ -11,13 +11,13 @@
 \usage{
 buildMSigDBCollection(
   file, 
-  MSDBVersion = "5.0", 
-  excludeCategories = c("C1", "C2", "C5"))
+  MSDBVersion = "2023.1", 
+  excludeCategories = c("C1", "C2", "C5", "M1", "M2", "M5"))
 
 MSigDBCollection(
   file, 
-  MSDBVersion = "5.0", 
-  excludeCategories = c("C1", "C2", "C5"),
+  MSDBVersion = "2023.1", 
+  excludeCategories = c("C1", "C2", "C5", "M1", "M2", "M5"),
   organism = "human", 
   useHomology = TRUE,
   addOldOrganismToSetNames = FALSE, 
@@ -29,20 +29,23 @@ MSigDBCollection(
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{file}{XML file (including path) such as the one distributed by Broad Institute.}
+  \item{file}{XML file (including path) such as the one distributed by Broad Institute. The file may optionally be 
+  compressed using gzip.}
 
   \item{MSDBVersion}{Character string containing the MSigDB version. }
 
   \item{excludeCategories}{Character vector containing the MSigDB category labels to be excluded. The default
-corresponds to positional sets (C1), "curated gene sets  from online pathway databases, publications in PubMed, and knowledge of
-domain experts" (C2) and GO (C5). }
+corresponds to positional sets (C1, M1), 
+ "curated gene sets  from online pathway databases, publications in PubMed, and knowledge of
+domain experts" (C2, M2) and GO (C5, M5). }
   \item{organism}{
-   Character string specifying the organism. Can be common name (such as "human"), scientific name ("Homo
+   Character string specifying the output organism. (The XML file containing the database specifies which organism its
+content corresponds to.) Can be common name (such as "human"), scientific name ("Homo
 sapiens"), or scientific shorthand ("Hs"). To see all recognized organisms, use function
 \code{\link{organismLabels}}. If \code{NULL} or \code{NA}, gene sets in the collection will retain their
 original content and organism they correspond to.
 }
-  \item{useHomology}{logical: should genes in non-human organisms by matched by homology
+  \item{useHomology}{logical: should genes in organisms other than the one native to the XML file by matched by homology
 information (where available)? If this is \code{FALSE} or the homology information is not available, genes
 will be matched by name.}
 
@@ -74,7 +77,7 @@ anRichment package. The XML file can be downloaded from http://software.broadins
 function \code{MSigDBCollection} also converts the gene sets to a target organism.
 }
 \author{
- MSigDB is maintained by the GSEA team at Broad Institute, http://software.broadinstitute.org/gsea/msigdb. R
-code by Peter Langfelder.
+ MSigDB is maintained by the GSEA team at Broad Institute, https://www.gsea-msigdb.org/gsea/index.jsp. 
+R code by Peter Langfelder.
 }
 \keyword{misc}% __ONLY ONE__ keyword per line

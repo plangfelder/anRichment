@@ -2,6 +2,17 @@
                            anRichment
 
 
+2023/04/26: 1.26:
+
+	. Bugfix: Human patient gene sets in Lee, ..., Heiman (2020) are now
+	  correctly labeled as human (they were labeled as mouse before).
+
+2023/04/26: 1.25:
+
+	. Function MSigDBCollection has been updated to correctly handle the
+	  mouse-specific MSigDB database file. This also affects
+	  buildMSigDBCollection that calls MSigDBCollection.
+
 2023/03/10: 1.24:
 
 	. New sets of thalamus markers from Saunders et al (2018)
