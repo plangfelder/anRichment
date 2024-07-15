@@ -2,6 +2,25 @@
                            anRichment
 
 
+2023/12/15: 1.28:
+
+	. New human sets of DE genes between AD patiens and controls in human
+	  oligodendrocytes and astrocytes from Jessica S. Sadick, Michael R.
+	  O’Dea, Philip Hasel, Taitea Dykstra, Arline Faustin, and Shane A.
+	  Liddelow, Astrocytes and oligodendrocytes undergo subtype-specific
+	  transcriptional changes in Alzheimer’s disease. Neuron. 2022 Jun 1;
+	  110(11): 1788–1805.e10. PMID: 35381189, PMCID: PMC9167747, DOI:
+	  10.1016/j.neuron.2022.03.008 
+
+2023/12/08: 1.27:
+
+	. New oligodendrocyte state (cluster) gene sets from mouse
+	  oligodendrocyte single cell RNA-seq, Hanseul Park, Byounggook Cho,
+	  Hongwon Kim, Takashi Saito, Takaomi C. Saido, Kyoung-Jae Won &
+	  Jongpil Kim.  Single-cell RNA-sequencing identifies
+	  disease-associated oligodendrocytes in male APP NL-G-F and 5XFAD
+	  mice. Nature Communications volume 14, Article number: 802 (2023)
+
 2023/04/26: 1.26:
 
 	. Bugfix: Human patient gene sets in Lee, ..., Heiman (2020) are now
