@@ -2,6 +2,13 @@
                            anRichment
 
 
+2024/07/15: 1.50:
+
+	. Merged R packages anRichmentMethods, BrainDiseaseCollection,
+	  HuntingtonDiseaseCuratedCompositeCollection,
+	  HuntingtonDiseaseWGCNACollection and SCSBrainCellTypeCollection into
+	  anRichment to simplify installation and use.
+
 2023/12/15: 1.28:
 
 	. New human sets of DE genes between AD patiens and controls in human

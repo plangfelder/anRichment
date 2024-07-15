@@ -1,12 +1,13 @@
 Package: anRichment
 Type: Package
 Title: Collections and annotation data for use with anRichmentMethods
-Version: 1.28
-Depends: anRichmentMethods,TxDb.Hsapiens.UCSC.hg19.knownGene,TxDb.Mmusculus.UCSC.mm10.knownGene
-Imports: stats, utils, AnnotationDbi, GO.db, WGCNA, dynamicTreeCut, XML
+Version: 1.50
+Depends: R (>= 4.0.0), TxDb.Hsapiens.UCSC.hg19.knownGene, TxDb.Mmusculus.UCSC.mm10.knownGene, WGCNA, AnnotationDbi, GO.db,
+Imports: stats, utils, dynamicTreeCut, XML, Rcpp
+Suggests: org.Hs.eg.db
+LinkingTo: Rcpp
 Date: 2024-07-15
 Author: Peter Langfelder
 Maintainer: Peter Langfelder <Peter.Langfelder@gmail.com>
-Description: This package contains data (collections and annotation data) to be used with anRichmentMethods.
-License: Many of the sets in the gene set collections have restrictive licenses. Please make sure you obtain the relevant license from the original author/copyright owner. KEGG (http://www.genome.jp/kegg/) requires a licence for commercial use. Reactome data are open source. BioCyc (https://biocyc.org/) requires a license, free for academic use. Pathway interaction database data are free. Lipid Maps (http://www.lipidmaps.org) are free.
-
+Description: This package contains functions for creating gene set collections, calculating enrichments of new gene lists in existing gene set collections, and also provides gene set collections collected from various online references. Further, this package contains data (collections and annotation data) to be used with anRichmentMethods.
+License: Many of the sets in the gene set collections have restrictive licenses. Please make sure you obtain the relevant license from the original author/copyright owner. KEGG (http://www.genome.jp/kegg/) requires a licence for commercial use.  Reactome data are open source. BioCyc (https://biocyc.org/) requires a license, free for academic use. Pathway interaction database data are free. Lipid Maps (http://www.lipidmaps.org) are free. R code is distributed under GPL-2.

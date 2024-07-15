@@ -500,7 +500,7 @@ buildMSigDBCollection = function(file, MSDBVersion = "2023.1", excludeCategories
      msigNode = as.list(xmlToList(msdb1[[s]]));
      if (msigNode$CATEGORY_CODE %in% excludeCategories) next;
 
-     msigCat.ext = anRichmentMethods:::.translateUsingTable(msigNode$CATEGORY_CODE, mSigCategories);
+     msigCat.ext = .translateUsingTable(msigNode$CATEGORY_CODE, mSigCategories);
      msigCat.rec = spaste("MSigDB ", msigNode$CATEGORY_CODE, ": ", msigCat.ext);
      msigSubCat.rec = if (msigNode$SUB_CATEGORY_CODE!="") 
                        paste(msigCat.rec, "-", msigNode$SUB_CATEGORY_CODE) else NULL;

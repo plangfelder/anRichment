@@ -1,7 +1,13 @@
+useDynLib(anRichment)
 exportPattern("^[[:alpha:]]+")
 
-import(anRichmentMethods, AnnotationDbi, WGCNA, GO.db, XML, TxDb.Hsapiens.UCSC.hg19.knownGene, TxDb.Mmusculus.UCSC.mm10.knownGene)
-importFrom("stats", "fisher.test")
-importFrom("utils", "read.csv", "write.csv")
+import(AnnotationDbi, WGCNA, GO.db, XML, TxDb.Hsapiens.UCSC.hg19.knownGene, 
+       TxDb.Mmusculus.UCSC.mm10.knownGene)
 importFrom("dynamicTreeCut", "printFlush", "indentSpaces")
+importFrom(Rcpp, evalCpp)
+importFrom("dynamicTreeCut", "printFlush", "indentSpaces")
+importFrom("stats", "cov", "fisher.test", "p.adjust", "phyper",
+             "weighted.mean", "setNames")
+importFrom("utils", "read.csv", "write.csv")
+
 
