@@ -1,5 +1,5 @@
-\name{HuntingtonDiseaseWGCNACollection}
-\alias{HuntingtonDiseaseWGCNACollection}
+\name{HuntingtonsDiseaseWGCNACollection}
+\alias{HuntingtonsDiseaseWGCNACollection}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
   Returns the collection of WGCNA modules from Huntington's Disease (HD)-related data.
@@ -8,7 +8,7 @@
   Returns the collection of WGCNA modules from Huntington's Disease (HD)-related data.
 }
 \usage{
-HuntingtonDiseaseWGCNACollection(
+HuntingtonsDiseaseWGCNACollection(
         organism = "human", 
         useHomology = TRUE,
         addOldOrganismToSetNames = FALSE,
@@ -63,7 +63,7 @@ to CHDI, Inc.
 }
 \examples{
   \dontrun{
-  collection = HuntingtonDiseaseWGCNACollection(organism = "human");
+  collection = HuntingtonsDiseaseWGCNACollection(organism = "human");
   knownGroups(collection)
   }
 
