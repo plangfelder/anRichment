@@ -6,7 +6,7 @@ Depends: R (>= 4.0.0), TxDb.Hsapiens.UCSC.hg19.knownGene, TxDb.Mmusculus.UCSC.mm
 Imports: stats, utils, dynamicTreeCut, XML, Rcpp
 Suggests: org.Hs.eg.db
 LinkingTo: Rcpp
-Date: 2024-07-16
+Date: 2024-07-22
 Author: Peter Langfelder
 Maintainer: Peter Langfelder <Peter.Langfelder@gmail.com>
 Description: This package contains functions for creating gene set collections, calculating enrichments of new gene lists in existing gene set collections, and also provides gene set collections collected from various online references. Further, this package contains data (collections and annotation data) to be used with anRichmentMethods.

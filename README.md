@@ -14,11 +14,9 @@ Peter (dot) Langfelder (at) gmail (dot) com
 ### R package anRichment 
 
 Package anRichment is an add-on package for the [R statististical language and 
-environment](https://www.r-project.org). The aim of this package is to provide tools for
-enrichment calculations, access to multiple reference gene sets such as GO, KEGG, Reactome as well as
-more specialized collections of gene sets collected from published literature, tools for creating
-custom collections of reference gene sets and others.
+environment](https://www.r-project.org). The aim of this package is to 
 
+provide tools for enrichment calculations, access to multiple reference gene sets such as GO, KEGG, Reactome as well as more specialized collections of gene sets collected from published literature, tools for creating custom collections of reference gene sets and others.
 ### Caution: experimental package!
 
 This package should be considered experimental. The "API" (such as it is), i.e., the function names,

@@ -5,6 +5,10 @@
 2024/07/16: 1.50-1:
 
 	. Added README.md 
+	. Removed gene sets from HuntingtonDiseaseCuratedCompositeCollection
+	  since they duplicate gene sets from HDSigDB; also removed the
+	  accessor function HuntingtonsDiseaseGeneExpressionCollection 
+	. Errors introduced by merging anRichment and anRichmentMethods fixed.
 
 2024/07/15: 1.50:
 
