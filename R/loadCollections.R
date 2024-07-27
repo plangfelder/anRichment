@@ -87,21 +87,6 @@ HDSigDBCollection = function(organism = "human", useHomology = TRUE,
         descriptionPattern = descriptionPattern);
 }
 
-
-HuntingtonsDiseaseGeneExpressionCollection = function(organism = "human", useHomology = TRUE,
-                      addOldOrganismToSetNames = FALSE, namePattern = ".convertedFrom.%o",
-                      addOldOrganismToSetDescriptions = FALSE,
-                      descriptionPattern = " (Converted from %o.)")
-{
-  HDSigDBCollection(organism = organism, useHomology = useHomology, 
-          addOldOrganismToSetNames = addOldOrganismToSetNames,
-          namePattern = namePattern,
-          addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
-          descriptionPattern = descriptionPattern)
-}
-
-
-
 BioSystemsCollection = function(organism = "human", ...)
 {
   org.ext = organismLabels(organism)[2];
@@ -687,5 +672,34 @@ genomicPositionCollection = function(
   }
   dataSets = dataSets[ sapply(dataSets, length) > 0];
   newCollection(dataSets = dataSets, groups = groups);
+}
+
+#=======================================================================================================
+#
+# HD WGCNA collection
+#
+#=======================================================================================================
+
+HuntingtonsDiseaseWGCNACollection = function(organism = "human", useHomology = TRUE, 
+                      addOldOrganismToSetNames = FALSE, namePattern = ".convertedFrom.%o",
+                      addOldOrganismToSetDescriptions = FALSE,                          
+                      descriptionPattern = " (Converted from %o.)")
+{
+  internalCollection.JAM = NULL;
+  x = load(system.file("extdata/WGCNA.HD.PL.collection.rda", mustWork = TRUE, package = "anRichment"));
+  if (x!="WGCNA.HD.PL.collection")
+     stop("Internal error: incorrect file content. Sorry!");
+
+  # Convert the collection to the output organism. Since convertGeneSet does check whether new organism is
+  # different from the current for each set, there's little overhead if 'organism' is already the same as
+  # the organisms for which the gene sets were saved.
+  if (is.null(organism)) return(get(x));
+  if (is.na(organism)) return(get(x));
+
+  convertCollectionToOrganism(get(x), organism = organism, useHomology = useHomology,
+                   addOldOrganismToSetNames = addOldOrganismToSetNames,
+                   namePattern = namePattern,
+                   addOldOrganismToSetDescriptions = addOldOrganismToSetDescriptions,
+                   descriptionPattern = descriptionPattern);
 }
 

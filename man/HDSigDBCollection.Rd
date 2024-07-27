@@ -1,6 +1,6 @@
 \name{HDSigDBCollection}
 \alias{HDSigDBCollection}
-\alias{HuntingtonsDiseaseGeneExpressionCollection}
+%\alias{HuntingtonsDiseaseGeneExpressionCollection}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
   Returns a collection of expression pattern gene sets curated from public data related to Huntington's
@@ -19,14 +19,6 @@ HDSigDBCollection(
         addOldOrganismToSetDescriptions = FALSE,
         descriptionPattern = " (Converted from \%o.)",
         ...)
-
-HuntingtonsDiseaseGeneExpressionCollection(
-        organism = "human",
-        useHomology = TRUE,
-        addOldOrganismToSetNames = FALSE,
-        namePattern = ".convertedFrom.\%o",
-        addOldOrganismToSetDescriptions = FALSE,
-        descriptionPattern = " (Converted from \%o.)")
 
 }
 %- maybe also 'usage' for other objects documented here.
