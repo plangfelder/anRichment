@@ -8,8 +8,7 @@ With contributions from Jim Wang, Mike Palazzolo, X. William Yang, CHDI, Rancho
 Biosciences and others
 
 ### Contact
-Peter (dot) Langfelder (at) gmail (dot) com
-
+Peter Langfelder, full.name (at) gmail (dot) com
 
 ### R package anRichment 
 
