@@ -10,7 +10,7 @@ BrainDiseaseCollection = function(organism = "human", useHomology = TRUE,
                       descriptionPattern = " (Converted from %o.)")
 {
   x = load(system.file("extdata/BrainDiseaseCollection.rda", mustWork = TRUE, 
-            package = "BrainDiseaseCollection"));
+            package = "anRichment"));
   if (x!="BrainDiseaseCollection")
      stop("Internal error: incorrect file content. Sorry!");
 
