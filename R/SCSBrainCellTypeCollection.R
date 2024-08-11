@@ -10,7 +10,7 @@ SCSBrainCellTypeCollection = function(organism = "human", useHomology = TRUE,
                       descriptionPattern = " (Converted from %o.)")
 {
   x = load(system.file("extdata/SCSBrainCellTypeCollection.rda", mustWork = TRUE, 
-            package = "SCSBrainCellTypeCollection"));
+            package = "anRichment"));
   if (x!="SCSBrainCellTypeCollection")
      stop("Internal error: incorrect file content. Sorry!");
 

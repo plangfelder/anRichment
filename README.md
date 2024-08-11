@@ -27,7 +27,7 @@ calculations using different versions of these packages will produce (hopefully 
 
 ### R tutorials
 
-A [set of tutorials](Tutorials/index.html)
+A [set of tutorials](https://github.com/plangfelder/anRichmentTutorials)
 that illustrate various aspects of this annotation and enrichement package are available.
 
 ### Download and installation
