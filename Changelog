@@ -2,6 +2,28 @@
                            anRichment
 
 
+2024/11/08: 1.53
+
+	. New sets of DE genes from the published analysis of Allelic Series
+	  of HD model knock-in mice (Langfelder et al 2016, DOI:
+	  10.1038/nn.4256)
+
+2024/10/24: 1.52
+
+	. New sets of proteins localizated to specific subcellular
+	  compartments from proteinatlas.org (Thul et al 2017, 
+	  DOI: 10.1126/science.aal3321)
+
+2024/09/24: 1.51
+
+	. New sets of DE genes from snRNA-seq of 18m old Q175 mice and
+	  controls (Malaiya et al 2021).
+	. New sets of DE genes from snRNA-seq of R6/2 and R6/1 mice and
+	  controls and genes DE in human HD oligodendrocytes vs. controls (Lim
+	  et al 2022)
+	. New sets of DE genes from FANS-seq of manjor human striatum neuronal
+	  cell types (Maetlik et al 2024)
+
 2024/08/11: 1.50-3:
 
         . Modified README. 
