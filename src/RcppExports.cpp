@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // match_int_C
 List match_int_C(const List& ls1, const IntegerVector& v2, const IntegerVector& incomparables);
-RcppExport SEXP _anRichmentMethods_match_int_C(SEXP ls1SEXP, SEXP v2SEXP, SEXP incomparablesSEXP) {
+RcppExport SEXP _anRichment_match_int_C(SEXP ls1SEXP, SEXP v2SEXP, SEXP incomparablesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -20,7 +20,7 @@ END_RCPP
 }
 // intersect_int
 List intersect_int(const List& ls1, const IntegerVector& v2, const IntegerVector& incomparables);
-RcppExport SEXP _anRichmentMethods_intersect_int(SEXP ls1SEXP, SEXP v2SEXP, SEXP incomparablesSEXP) {
+RcppExport SEXP _anRichment_intersect_int(SEXP ls1SEXP, SEXP v2SEXP, SEXP incomparablesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -33,7 +33,7 @@ END_RCPP
 }
 // intersectSize_int
 IntegerVector intersectSize_int(const List& ls1, const IntegerVector& v2, const IntegerVector& incomparables);
-RcppExport SEXP _anRichmentMethods_intersectSize_int(SEXP ls1SEXP, SEXP v2SEXP, SEXP incomparablesSEXP) {
+RcppExport SEXP _anRichment_intersectSize_int(SEXP ls1SEXP, SEXP v2SEXP, SEXP incomparablesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -46,7 +46,7 @@ END_RCPP
 }
 // intersectSizesForEnrichment
 List intersectSizesForEnrichment(const List& classes, const List& classBg, const IntegerVector& class2bg, const List& refSets, const LogicalVector& doMap, const IntegerMatrix& class2ref, const LogicalVector& class2setIDHasDuplicates, const CharacterVector& bgTypeR, const IntegerVector& mappedRefBg, const LogicalVector& returnMappedSets);
-RcppExport SEXP _anRichmentMethods_intersectSizesForEnrichment(SEXP classesSEXP, SEXP classBgSEXP, SEXP class2bgSEXP, SEXP refSetsSEXP, SEXP doMapSEXP, SEXP class2refSEXP, SEXP class2setIDHasDuplicatesSEXP, SEXP bgTypeRSEXP, SEXP mappedRefBgSEXP, SEXP returnMappedSetsSEXP) {
+RcppExport SEXP _anRichment_intersectSizesForEnrichment(SEXP classesSEXP, SEXP classBgSEXP, SEXP class2bgSEXP, SEXP refSetsSEXP, SEXP doMapSEXP, SEXP class2refSEXP, SEXP class2setIDHasDuplicatesSEXP, SEXP bgTypeRSEXP, SEXP mappedRefBgSEXP, SEXP returnMappedSetsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -66,14 +66,14 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_anRichmentMethods_match_int_C", (DL_FUNC) &_anRichmentMethods_match_int_C, 3},
-    {"_anRichmentMethods_intersect_int", (DL_FUNC) &_anRichmentMethods_intersect_int, 3},
-    {"_anRichmentMethods_intersectSize_int", (DL_FUNC) &_anRichmentMethods_intersectSize_int, 3},
-    {"_anRichmentMethods_intersectSizesForEnrichment", (DL_FUNC) &_anRichmentMethods_intersectSizesForEnrichment, 10},
+    {"_anRichment_match_int_C", (DL_FUNC) &_anRichment_match_int_C, 3},
+    {"_anRichment_intersect_int", (DL_FUNC) &_anRichment_intersect_int, 3},
+    {"_anRichment_intersectSize_int", (DL_FUNC) &_anRichment_intersectSize_int, 3},
+    {"_anRichment_intersectSizesForEnrichment", (DL_FUNC) &_anRichment_intersectSizesForEnrichment, 10},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_anRichmentMethods(DllInfo *dll) {
+RcppExport void R_init_anRichment(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

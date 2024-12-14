@@ -2,6 +2,10 @@
                            anRichment
 
 
+2024/12/14: 1.54-1
+
+	. Bugfix in compiled code: compiled code works again.
+
 2024/12/03: 1.54
 
 	. New sets of DE genes between Foxp1 conditional KO and WT mice in D1-

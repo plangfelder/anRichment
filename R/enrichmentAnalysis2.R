@@ -406,8 +406,9 @@ enrichmentAnalysis.general = function(
          for (cl in which(active2bg==bg))
          {
            overlapSizes[, cl] = sapply(sets.bg, function(st) sum(st%in% classes.bg[[cl]]));
-              ### FIXME: this could potentially be speeded up by using matchList 
-              ### combined with sapply(x, function() sum(!is.na(x))
+              ### this could potentially be speeded up by using matchList 
+              ### combined with sapply(x, function() sum(!is.na(x)); an experiment to do that however produced slower
+              ### code, perhaps because classes.bg were not long enough for matchList to be advantageous
          }
          setSizes[[bg]] = sapply(sets.bg, function(x) sum(!is.na(x)));
      }
