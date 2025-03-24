@@ -342,6 +342,7 @@ enrichmentAnalysis.general = function(
    {
      # Convert all IDs to integer indices relative to maximalBackgound. The variables will have suffix .f (.factor).
      if (verbose > 1) printFlush(paste(spaces, "   (using compiled code)"));
+     printFlush(paste("WARNING: due to a known bug, overlap genes will be incorrect."))
      maximalBackground = .removeMissing(unique(c(unlist(inactive.ext), referenceBackground)))
      collectionIDLists.f = matchList(collectionIDLists, if (doMap) allCollectionIDs else maximalBackground)
      referenceBackground.f = match(referenceBackground, maximalBackground, incomparables = NA);
