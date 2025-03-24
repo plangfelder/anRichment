@@ -2,6 +2,16 @@
                            anRichment
 
 
+2025/03/24: 1.55
+
+	. New gene sets from Handsaker et al, "Long somatic DNA-repeat
+	  expansion drives neurodegeneration in Huntington’s disease", Cell
+	  2025, DOI: 10.1016/j.cell.2024.11.038
+	. New gene sets with DE genes in the DNA Repair/Mismatch Repair study
+	  by Wang et al, "Distinct mismatch-repair complex genes set neuronal
+	  CAG-repeat expansion rate to drive selective pathogenesis in HD
+	  mice." Cell 2025, DOI:10.1016/j.cell.2025.01.031
+
 2024/12/14: 1.54-1
 
 	. Bugfix in compiled code: compiled code works again.
