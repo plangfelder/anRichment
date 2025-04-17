@@ -2,6 +2,17 @@
                            anRichment
 
 
+2025/04/17: 1.56
+
+	. New standard group named Sorted cell RNA-seq for tagging sets from
+	  RNA-seq of cells sorted by TRAP, FACS, FANS and other cell sorting
+	  methods.
+	. New sets of DE genes in selected genotype combinations from
+	  snRNA-seq of 12m striatum from Msh3-KO x Q140 HD mouse model mice,
+	  described in Wang et al, "Distinct mismatch-repair complex genes set neuronal
+	  CAG-repeat expansion rate to drive selective pathogenesis in HD
+	  mice." Cell 2025, DOI:10.1016/j.cell.2025.01.031.
+
 2025/03/24: 1.55
 
 	. New gene sets from Handsaker et al, "Long somatic DNA-repeat
