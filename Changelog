@@ -2,6 +2,15 @@
                            anRichment
 
 
+2025/04/18: 1.56-1
+
+	. Minor change in names of gene sets with DE genes in the DNA
+	  Repair/Mismatch Repair study by Wang et al, "Distinct mismatch-repair
+	  complex genes set neuronal CAG-repeat expansion rate to drive
+	  selective pathogenesis in HD mice." Cell 2025,
+	  DOI:10.1016/j.cell.2025.01.031. Added " (Wang 2025)" to the names of
+	  the data sets.
+
 2025/04/17: 1.56
 
 	. New standard group named Sorted cell RNA-seq for tagging sets from
