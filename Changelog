@@ -2,6 +2,15 @@
                            anRichment
 
 
+2025/04/19: 1.56-2
+
+	. Minor change in data set IDs of DE genes in selected genotype combinations from
+	  snRNA-seq of 12m striatum from Msh3-KO x Q140 HD mouse model mice,
+	  described in Wang et al, "Distinct mismatch-repair complex genes set neuronal
+	  CAG-repeat expansion rate to drive selective pathogenesis in HD
+	  mice." Cell 2025, DOI:10.1016/j.cell.2025.01.031. The previous data
+	  set IDs caused conflict because of non-unique data set IDs.
+
 2025/04/18: 1.56-1
 
 	. Minor change in names of gene sets with DE genes in the DNA
