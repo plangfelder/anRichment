@@ -2,6 +2,16 @@
                            anRichment
 
 
+2025/05/31: 1.57  
+
+	. New sets of protein interactors with MMR proteins from Chen et al
+	  "Proteomic Analysis Reveals a Novel Mutator S (MutS) Partner
+	  Involved in Mismatch Repair Pathway." DOI: 10.1074/mcp.M115.056093
+	  (2016).
+	. Recently addde gene sets from Wang et al (2025) have been reworked
+	  with more genes included in the analysis and more stringent DE
+	  threshold applied.
+
 2025/04/19: 1.56-2
 
 	. Minor change in data set IDs of DE genes in selected genotype combinations from
