@@ -2,6 +2,15 @@
                            anRichment
 
 
+2025/06/06: 1.58-1
+
+	. Minor changes to short data set names for data sets from Wang (2025)
+
+2025/06/06: 1.58
+
+	. Standard (i.e., internal) groups now include Substantia niagra and
+	  Parkinson's disease.
+
 2025/05/31: 1.57  
 
 	. New sets of protein interactors with MMR proteins from Chen et al
