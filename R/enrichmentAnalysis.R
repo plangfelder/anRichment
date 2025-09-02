@@ -3763,10 +3763,15 @@ subCollectionRowsInEnrichmentTable = function(enrichmentTable, subCollection)
 }
 
 splitEnrichmentResultsBySubcollections = function(enr, combinedCollection, collections,
-           dropColumns = character(0))
+           dropColumns = character(0), includeComponents = c("countsInDataSet", "pValues", "enrichmentRatio"))
 {
    if (length(enr)==0) return(NULL);
-   tables1 = enr[c("countsInDataSet", "pValues")];
+   if (any(!includeComponents %in% names(enr)))
+     stop(spaste("All entries in 'includeComponents' must correspond to components in argument 'enr'.\n",
+                 "  Offending entries:\n", 
+                    formatLabels(paste(includeComponents[!includeComponents %in% names(enr)], collapse = ", "), 
+                      maxCharPerLine = 80, maxLines = 3)));
+   tables1 = enr[includeComponents];
    tablesByCollection = lapply(collections, function(coll)
    {
       if (length(enr$enrichmentTable) > 0)

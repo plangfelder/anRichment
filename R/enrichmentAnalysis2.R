@@ -4,11 +4,11 @@
 #
 #===================================================================================================
 
-mapCollectionIDs = function(collection, new2old, keepOrder = TRUE)
+mapCollectionIDs = function(collection, new2old, keepOrder = TRUE, mc.cores = 1)
 {
   new = new2old[, 1];
   old = new2old[, 2];
-  collection$dataSets = lapply(collection$dataSets, function(set) 
+  collection$dataSets = mclapply(collection$dataSets, function(set) 
   {
     newIDs = new[old %in% set$data$Entrez];  # these may contain duplicates
     index1 = which(new %in% newIDs);  # this takes care of the duplicates
@@ -22,7 +22,7 @@ mapCollectionIDs = function(collection, new2old, keepOrder = TRUE)
     }
     set$data = data.frame(Entrez = newIDs, set$data[index.old, -1]);
     set;
-  })
+  }, mc.cores = mc.cores)
   collection;
 }
 

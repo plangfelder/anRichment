@@ -9,7 +9,7 @@ old identifier; several new identifiers may be mapped to one old identifier and 
 old identifier appeared in, with the same evidence codes.
 }
 \usage{
-mapCollectionIDs(collection, new2old, keepOrder = TRUE)
+mapCollectionIDs(collection, new2old, keepOrder = TRUE, mc.cores = 1)
 }
 \arguments{
   \item{collection}{
@@ -23,6 +23,9 @@ are discarded.
 }
   \item{keepOrder}{
   Logical: should the new identifiers be ordered in the order of the corresponding old identifiers? 
+}
+  \item{mc.cores}{
+  Number of cores to use in parallel.
 }
 }
 \value{

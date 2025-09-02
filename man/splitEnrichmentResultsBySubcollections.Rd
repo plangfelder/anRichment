@@ -10,7 +10,8 @@ Split results of enrichment analysis into parts corresponding to subcollections 
 used for the enrichment analysis.
 }
 \usage{
-splitEnrichmentResultsBySubcollections(enr, combinedCollection, collections, dropColumns = character(0))
+splitEnrichmentResultsBySubcollections(enr, combinedCollection, collections, dropColumns = character(0),
+        includeComponents = c("countsInDataSet", "pValues", "enrichmentRatio"))
 splitEnrichmentTableBySubcollections(enrTab, combinedCollection, collections, dropColumns = character(0))
 }
 %- maybe also 'usage' for other objects documented here.
@@ -35,6 +36,11 @@ A list in which each component is a collection. Each collection should be a subc
 Optional character vector of column names of \code{enrTab} or the \code{enrichmentTable} component of
 \code{enr} that should be dropped in output. 
 }
+  \item{includeComponents}{
+  Character vector specifying component tables in argument \code{enr} that are to be split. The components must be
+matrices with rows corresponding to gene sets and columns to classes. Within the object returned by 
+function \code{\link{enrichmentAnalysis}}, the relevant components are \code{pValues}, \code{countsInDataSet},
+\code{enrichmentRatio} and optionally \code{Bonferroni} and \code{FDR}.}
 }
 \details{
 Although the \code{\link{enrichmentAnalysis}} returns a list with multiple components, the function

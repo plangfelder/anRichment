@@ -9,5 +9,6 @@ importFrom("dynamicTreeCut", "printFlush", "indentSpaces")
 importFrom("stats", "cov", "fisher.test", "p.adjust", "phyper",
              "weighted.mean", "setNames")
 importFrom("utils", "read.csv", "write.csv")
+importFrom("parallel", "mclapply")
 
 
