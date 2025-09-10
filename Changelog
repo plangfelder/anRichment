@@ -2,6 +2,10 @@
                            anRichment
 
 
+2025/09/10: 1.60
+
+	. New function restrictCollectionToBackground
+
 2025/09/02: 1.59
 
 	. Function splitEnrichmentResultsBySubcollections now accepts argument

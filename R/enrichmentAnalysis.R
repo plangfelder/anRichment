@@ -1217,6 +1217,20 @@ subsetCollection = function(
 
 #===================================================================================================
 #
+# Restrict collection to a given background
+#
+#===================================================================================================
+
+restrictCollectionToBackground = function(collection, background)
+{
+  for (set in 1:nDataSets(collection))
+     collection$dataSets[[set]]$data = 
+        collection$dataSets[[set]]$data[ collection$dataSets[[set]]$data$Entrez %in% background, ];
+  collection;
+}
+
+#===================================================================================================
+#
 # Utility functions for checking similarity of phrases
 #
 #===================================================================================================
