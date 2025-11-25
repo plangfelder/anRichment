@@ -2,10 +2,19 @@
                            anRichment
 
 
+2025/11/25: 1.62:
+
+	. New sets of DE genes in Nsd1 KO in cortex (Zheng et al, Cell Reports
+	  2023).
+	. New sets representing protein clusters determined from analysis of
+	  intrinsically disordered regions (IDR; Ruff et al, Cell 2025).
+
 2025/09/10: 1.61
 
 	. New sets of cluster marker genes for clusters identified in
 	  snRNA-seq of 12m striatum in Wang et al (2025). 
+	. Minor changes in short data set names and in group tags for the DNA
+	  repair sets from Wang et al (2025)
 
 2025/09/10: 1.60
 
