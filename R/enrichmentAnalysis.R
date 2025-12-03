@@ -3143,13 +3143,14 @@ entrezHomologs = function(orgFrom, orgTo, useHomology = TRUE, version = NULL)
 {
   if (is.null(version))
   {
+    homologyFile = "Homology-allOrganisms-2025-12.rda"
+  } else if (version < 2025.12 & version >=2019.03) {
     homologyFile = "Homology-allOrganisms-2019.rda"
-  } else if (version < 2019.03 & version >= 2014.04) 
-  {
+  } else if (version < 2019.03 & version >= 2014.04) {
     homologyFile = "Homology-allOrganisms.rda"
   } else if (version < 2014.04) {
     homologyFile = "Homology-Hs-Mm.rda"
-  } else homologyFile = "Homology-allOrganisms-2019.rda"
+  } else homologyFile = "Homology-allOrganisms-2025-12.rda"
   shortFrom = organismShorthand(orgFrom);
   shortTo = organismShorthand(orgTo);
   homology = NULL;
