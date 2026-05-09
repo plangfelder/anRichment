@@ -1,7 +1,7 @@
 Package: anRichment
 Type: Package
 Title: Collections and annotation data for use with anRichmentMethods
-Version: 1.64
+Version: 1.65
 Depends: R (>= 4.0.0), TxDb.Hsapiens.UCSC.hg19.knownGene, TxDb.Mmusculus.UCSC.mm10.knownGene, WGCNA, AnnotationDbi, GO.db, parallel
 Imports: stats, utils, dynamicTreeCut, XML, Rcpp
 Suggests: org.Hs.eg.db

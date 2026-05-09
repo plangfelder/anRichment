@@ -2,6 +2,15 @@
                            anRichment
 
 
+2026/05/09: 1.65
+
+	. New gene sets: individual branches, classes, groups and types of the
+	  Human Proteostasis Network (Elsasser 2026 Bioarxiv,
+	  https://www.proteostasisconsortium.com/pn-annotation/) 
+
+	. One new gene set containing proteins with CAG repeat tracts (Li et
+	  al, PLoS One. 2012;7(7):e41167. Epub 2012 
+
 2026/03/03: 1.64:
 
 	. Standard groups were expanded by adding ChIP-seq group for gene sets
